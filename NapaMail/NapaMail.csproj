@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>b7178faa-02d0-4a4a-a31a-d3d1a20cd47c</ProjectGuid>
+    <ProjectGuid>{B7178FAA-02D0-4A4A-A31A-D3D1A20CD47C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NapaMail</RootNamespace>
@@ -30,24 +30,49 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BD\ApuestasDB.cs" />
+    <Compile Include="BD\ApuestasDBInitializer.cs" />
+    <Compile Include="Controllers\ApuestasController.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Correo.cs" />
+    <Compile Include="Models\Apuesta.cs" />
+    <Compile Include="Models\ApuestaVO.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\ClienteVO.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ApuestaRepository.cs" />
+    <Compile Include="Repositories\ClienteRespository.cs" />
+    <Compile Include="Repositories\IApuestaRepository.cs" />
+    <Compile Include="Repositories\IClienteRepository.cs" />
+    <Compile Include="Services\ApuestaService.cs" />
+    <Compile Include="Services\ClienteService.cs" />
+    <Compile Include="Services\IApuestaService.cs" />
+    <Compile Include="Services\IClienteService.cs" />
+    <Compile Include="Utilities\ApuestaUtil.cs" />
+    <Compile Include="Utilities\ClienteUtility.cs" />
+    <Compile Include="Utilities\IApuestaUtil.cs" />
+    <Compile Include="Utilities\IClienteUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +82,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>
