@@ -169,8 +169,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="BD\ApuestasDB.cs" />
-    <Compile Include="BD\ApuestasDBInitializer.cs" />
+    <Compile Include="BD\napaMailDB.cs" />
+    <Compile Include="BD\napaMailDBInitializer.cs" />
     <Compile Include="Controllers\ApuestasController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Global.asax.cs">

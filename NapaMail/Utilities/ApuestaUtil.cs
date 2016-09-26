@@ -8,9 +8,9 @@ namespace c11eindividual.Utilities
 {
     public class ApuestaUtil : IApuestaUtil
     {
-        public Apuesta ConvertVO2Entity(ApuestaVO a)
+        public Mensaje ConvertVO2Entity(ApuestaVO a)
         {
-            Apuesta ap = new Apuesta()
+            Mensaje ap = new Mensaje()
             {
                 id = a.id,
                 cantidad = a.cantidad,
@@ -21,7 +21,7 @@ namespace c11eindividual.Utilities
             return ap;
         }
 
-        public ApuestaVO ConvertEntity2VO(Apuesta a)
+        public ApuestaVO ConvertEntity2VO(Mensaje a)
         {
             ApuestaVO ap = new ApuestaVO()
             {

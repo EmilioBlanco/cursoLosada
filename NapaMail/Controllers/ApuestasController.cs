@@ -18,12 +18,12 @@ namespace c11eindividual.Controllers
 {
     public class ApuestasController : ApiController
     {
-        private ApuestasDB db = new ApuestasDB();
+        private CorreoDB db = new CorreoDB();
 
         // GET: api/Apuestas
         public List<ApuestaVO> GetlistClientes()
         {
-            ApuestasDB db = new ApuestasDB();
+            CorreoDB db = new CorreoDB();
             ApuestaRepository apuestaRepository = new ApuestaRepository();
             ApuestaUtil apuestaUtil = new ApuestaUtil();
             ApuestaService apuestaService = new ApuestaService(apuestaRepository, apuestaUtil);
@@ -34,7 +34,7 @@ namespace c11eindividual.Controllers
         // GET: api/Apuestas/5
         public ApuestaVO GetApuesta(int id)
         {
-            ApuestasDB db = new ApuestasDB();
+            CorreoDB db = new CorreoDB();
             ApuestaRepository apuestaRepository = new ApuestaRepository();
             ApuestaUtil apuestaUtil = new ApuestaUtil();
             ApuestaService apuestaService = new ApuestaService(apuestaRepository, apuestaUtil);
@@ -45,7 +45,7 @@ namespace c11eindividual.Controllers
         
         public ApuestaVO PutApuesta(ApuestaVO apuesta)
         {
-            ApuestasDB db = new ApuestasDB();
+            CorreoDB db = new CorreoDB();
             ApuestaRepository apuestaRepository = new ApuestaRepository();
             ApuestaUtil apuestaUtil = new ApuestaUtil();
             ApuestaService apuestaService = new ApuestaService(apuestaRepository, apuestaUtil);
@@ -55,7 +55,7 @@ namespace c11eindividual.Controllers
         // POST: api/Apuestas
         public ApuestaVO PostApuesta(ApuestaVO apuesta)
         {
-            ApuestasDB db = new ApuestasDB();
+            CorreoDB db = new CorreoDB();
             ApuestaRepository apuestaRepository = new ApuestaRepository();
             ApuestaUtil apuestaUtil = new ApuestaUtil();
             ApuestaService apuestaService = new ApuestaService(apuestaRepository, apuestaUtil);
@@ -65,7 +65,7 @@ namespace c11eindividual.Controllers
         // DELETE: api/Apuestas/5
         public bool DeleteApuesta(int id)
         {
-            ApuestasDB db = new ApuestasDB();
+            CorreoDB db = new CorreoDB();
             ApuestaRepository apuestaRepository = new ApuestaRepository();
             ApuestaUtil apuestaUtil = new ApuestaUtil();
             ApuestaService apuestaService = new ApuestaService(apuestaRepository, apuestaUtil);

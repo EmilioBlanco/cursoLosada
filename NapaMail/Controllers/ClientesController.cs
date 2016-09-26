@@ -18,13 +18,13 @@ namespace c11eindividual.Controllers
 {
     public class ClientesController : ApiController
     {
-        private ApuestasDB db = new ApuestasDB();
+        private CorreoDB db = new CorreoDB();
 
         // GET: api/Clientes
         public List<ClienteVO> GetlistClientes()
         {
-            ApuestasDB db = new ApuestasDB();
-            ClienteRepository clienteRepository = new ClienteRepository();
+            CorreoDB db = new CorreoDB();
+            UsuarioRepository clienteRepository = new UsuarioRepository();
             ClienteUtility clienteUtil = new ClienteUtility();
             ClienteService clienteService = new ClienteService(clienteRepository, clienteUtil);
             return clienteService.Lista();
@@ -35,8 +35,8 @@ namespace c11eindividual.Controllers
 
         public ClienteVO GetCliente(int id)
         {
-            ApuestasDB db = new ApuestasDB();
-            ClienteRepository clienteRepository = new ClienteRepository();
+            CorreoDB db = new CorreoDB();
+            UsuarioRepository clienteRepository = new UsuarioRepository();
             ClienteUtility clienteUtil = new ClienteUtility();
             ClienteService clienteService = new ClienteService(clienteRepository, clienteUtil);
             return clienteService.Lee(id);
@@ -45,8 +45,8 @@ namespace c11eindividual.Controllers
         // PUT: api/Clientes/5
         public ClienteVO PutCliente(ClienteVO cliente)
         {
-            ApuestasDB db = new ApuestasDB();
-            ClienteRepository clienteRepository = new ClienteRepository();
+            CorreoDB db = new CorreoDB();
+            UsuarioRepository clienteRepository = new UsuarioRepository();
             ClienteUtility clienteUtil = new ClienteUtility();
             ClienteService clienteService = new ClienteService(clienteRepository, clienteUtil);
             return clienteService.Modifica(cliente);
@@ -55,8 +55,8 @@ namespace c11eindividual.Controllers
         // POST: api/Clientes
         public ClienteVO PostCliente(ClienteVO cliente)
         {
-            ApuestasDB db = new ApuestasDB();
-            ClienteRepository clienteRepository = new ClienteRepository();
+            CorreoDB db = new CorreoDB();
+            UsuarioRepository clienteRepository = new UsuarioRepository();
             ClienteUtility clienteUtil = new ClienteUtility();
             ClienteService clienteService = new ClienteService(clienteRepository, clienteUtil);
             return clienteService.Escribe(cliente);
@@ -65,8 +65,8 @@ namespace c11eindividual.Controllers
         // DELETE: api/Clientes/5
         public bool DeleteCliente(int id)
         {
-            ApuestasDB db = new ApuestasDB();
-            ClienteRepository clienteRepository = new ClienteRepository();
+            CorreoDB db = new CorreoDB();
+            UsuarioRepository clienteRepository = new UsuarioRepository();
             ClienteUtility clienteUtil = new ClienteUtility();
             ClienteService clienteService = new ClienteService(clienteRepository, clienteUtil);
             return clienteService.Borra(id);

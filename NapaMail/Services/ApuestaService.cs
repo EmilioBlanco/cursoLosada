@@ -22,8 +22,8 @@ namespace c11eindividual.Services
         public List<ApuestaVO> Lista()
         {
             List<ApuestaVO> aRetornar = new List<ApuestaVO>();
-            List<Apuesta> apuestas = apuestaRepository.Lista();
-            foreach (Apuesta a in apuestas)
+            List<Mensaje> apuestas = apuestaRepository.Lista();
+            foreach (Mensaje a in apuestas)
             {
                 aRetornar.Add(apuestaUtil.ConvertEntity2VO(a));
             }
@@ -32,15 +32,15 @@ namespace c11eindividual.Services
 
         public ApuestaVO Lee(int _id)
         {
-            Apuesta a = apuestaRepository.Lee(_id);
+            Mensaje a = apuestaRepository.Lee(_id);
             ApuestaVO a_vo = apuestaUtil.ConvertEntity2VO(a);
             return a_vo;
         }
 
         public ApuestaVO Escribe(ApuestaVO _a)
         {
-            Apuesta a = apuestaUtil.ConvertVO2Entity(_a);
-            Apuesta a2 = apuestaRepository.Escribe(a);
+            Mensaje a = apuestaUtil.ConvertVO2Entity(_a);
+            Mensaje a2 = apuestaRepository.Escribe(a);
             return apuestaUtil.ConvertEntity2VO(a2);
         }
 
@@ -51,7 +51,7 @@ namespace c11eindividual.Services
 
         public ApuestaVO Modifica(ApuestaVO _a)
         {
-            Apuesta a = apuestaUtil.ConvertVO2Entity(_a);
+            Mensaje a = apuestaUtil.ConvertVO2Entity(_a);
             return apuestaUtil.ConvertEntity2VO(apuestaRepository.Modifica(a));
         }
     }
