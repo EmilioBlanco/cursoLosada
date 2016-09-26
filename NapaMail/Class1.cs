@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NapaMail
 {
-    public class Class1
+    public class Correo
     {
     }
 }
