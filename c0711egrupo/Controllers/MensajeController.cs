@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -24,10 +22,11 @@ namespace c11eindividual.Controllers
         public List<MensajeVo> GetTodos()
         {
             CorreoDB db = new CorreoDB();
+            Usuario s = (Usuario)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
             MensajeRepository MensajeRepository = new MensajeRepository();
             MensajeUtil MensajeUtil = new MensajeUtil();
             MensajeService MensajeService = new MensajeService(MensajeRepository, MensajeUtil);
-            return MensajeService.Todos(_id);
+            return MensajeService.Todos(s.id);
 
         }
         // GET: api/Mensajes/5
@@ -42,7 +41,7 @@ namespace c11eindividual.Controllers
 
         // PUT: api/Mensajes/5
         
-        public MensajeVO PutMensaje(MensajeVO Mensaje)
+        public MensajeVo PutMensaje(MensajeVo Mensaje)
         {
             CorreoDB db = new CorreoDB();
             MensajeRepository MensajeRepository = new MensajeRepository();
@@ -52,7 +51,7 @@ namespace c11eindividual.Controllers
         }
 
         // POST: api/Mensajes
-        public MensajeVO PostMensaje(MensajeVO Mensaje)
+        public MensajeVo PostMensaje(MensajeVo Mensaje)
         {
             CorreoDB db = new CorreoDB();
             MensajeRepository MensajeRepository = new MensajeRepository();
