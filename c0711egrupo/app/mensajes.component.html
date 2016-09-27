@@ -1,0 +1,21 @@
+<h2>Mensajes</h2>
+<div>
+    <button class="btn btn-success" style="color:white" (click)="gotoDetail()">
+        Redactar
+    </button>
+</div>
+<ul class="mensajes">
+  <li *ngFor="let mensaje of mensajes" (click)="onSelect(mensaje)"
+      [class.selected]="mensaje === selectedMensaje">
+    <span class="badge">{{mensaje.id}}</span>
+    <span>{{mensaje.asunto}}</span>
+    <button class="delete"
+      (click)="delete(mensaje)">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedMensaje">
+  <h2>
+    {{selectedMensaje.asunto}} seleccionado
+  </h2>
+  <button class="btn-info" style="color:white" (click)="gotoDetail()">Ver Mensaje</button>
+</div>

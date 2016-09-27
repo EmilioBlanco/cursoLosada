@@ -1,0 +1,50 @@
+<div *ngIf="create">
+    <div>
+        <label>Emisor: </label>
+        <input [(ngModel)]="mensaje.emisorID" placeholder="Emisor" />
+    </div>
+    <div>
+        <label>Receptor: </label>
+        <select id="cmbEmisor" [(ngModel)]="mensaje.receptorID">
+            <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{usuario.nombre}}</option>
+        </select>
+    </div>
+    <div>
+        <label>Asunto:</label>
+        <input type="text" id="txtAsunto" />
+    </div>
+    <div>
+    <label>Fecha: </label>
+        <input [(ngModel)]="mensaje.fecha" placeholder="Fecha" />
+    </div>
+    <div id="divCuerpo">
+        <label>Cuerpo: </label>
+        <br/>
+        <textarea id="txtCuerpo" [(ngModel)]="mensaje.cuerpo" placeholder="Texto"></textarea>
+    </div>
+  <button class="btn btn-toolbar" style="color:black !important;" (click)="goBack()">Atras</button>
+</div>
+<div *ngIf="mensaje && !create">
+    <h2>Mensaje </h2>
+    <div>
+        <label>Emisor: </label>
+        <label [(ngModel)]="mensaje.emisorID">{{mensaje.emisor}}</label>
+    </div>
+    <div>
+        <label>Receptor: </label>
+        <label id="cmbEmisor" [(ngModel)]="mensaje.receptorID">{{mensaje.receptor}}</label>
+    </div>
+    <div>
+        <label>Asunto:</label>
+        <label id="txtAsunto" [(ngModel)]="mensaje.asunto"></label>
+    </div>
+    <div>
+        <label>Fecha: </label>
+        <label [(ngModel)]="mensaje.fecha"></label>
+    </div>
+    <div>
+        <label>Cuerpo: </label>
+        <label [(ngModel)]="mensaje.cuerpo"></label>
+    </div>
+    <button class="btn btn-toolbar" style="color:black !important;" (click)="goBack()">Atras</button>
+</div>

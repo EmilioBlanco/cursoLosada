@@ -3,30 +3,30 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Cliente } from './cliente';
+import { Usuario } from './usuario';
 
 @Injectable()
-export class ClienteService {
+export class UsuarioService {
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
     private headersAccept = new Headers({ 'Accept': 'application/json' });
-  private clientesUrl = 'api/clientes';  // URL to web api
+  private usuariosUrl = 'api/usuarios';  // URL to web api
 
   constructor(private http: Http) { }
 
-  getClientes(): Promise<Cliente[]> {
-    return this.http.get(this.clientesUrl)
+  getUsuarios(): Promise<Usuario[]> {
+    return this.http.get(this.usuariosUrl)
                .toPromise()
-               .then(response => response.json() as Cliente[])
+               .then(response => response.json() as Usuario[])
                .catch(this.handleError);
   }
 
-  getCliente(id: number): Promise<Cliente> {
-    return this.getClientes()
-               .then(clientes => clientes.find(cliente => cliente.id === id));
+  getUsuario(id: number): Promise<Usuario> {
+    return this.getUsuarios()
+               .then(users => users.find(usuario => usuario.id === id));
   }
 
-  delete(id: number): Promise<boolean> {
+  /*delete(id: number): Promise<boolean> {
     let url = `${this.clientesUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
         .toPromise()
@@ -49,7 +49,7 @@ export class ClienteService {
       .toPromise()
       .then(() => cliente)
       .catch(this.handleError);
-  }
+  }*/
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only

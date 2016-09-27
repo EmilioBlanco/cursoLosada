@@ -1,39 +1,25 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ClientesComponent }     from './clientes.component';
-import { ClienteDetailComponent } from './cliente-detail.component';
-import {MensajesComponent} from './Mensajes.component';
-import {MensajeDetailComponent} from './Mensaje-detail.component';
+import { MensajesComponent }     from './mensajes.component';
+import { MensajeDetailComponent } from './mensaje-detail.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/Mensajes',
+    redirectTo: '/mensajes',
     pathMatch: 'full'
   },
   {
-      path: 'cliente-details/:id',
-      component: ClienteDetailComponent
-  },
-  {
-      path: 'cliente-details',
-      component: ClienteDetailComponent
-  },
-  {
-      path: 'clientes',
-      component: ClientesComponent
-  },
-  {
-      path: 'Mensajes',
-      component: MensajesComponent
-  },
-  {
-      path: 'Mensaje-details/:id',
+      path: 'mensaje-details/:id',
       component: MensajeDetailComponent
   },
   {
-      path: 'Mensaje-details',
+      path: 'mensajes',
+      component: MensajesComponent
+  },
+  {
+      path: 'mensaje-details',
       component: MensajeDetailComponent
   }
 
