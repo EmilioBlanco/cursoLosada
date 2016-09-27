@@ -1,7 +1,7 @@
 import {Cliente} from './cliente';
-export class Apuesta {
+export class Mensaje {
   id: number;
-  fechaApuesta: string;
+  fechaMensaje: string;
   textoUsuario: string;
   cantidad: number;
   UsrID: number;

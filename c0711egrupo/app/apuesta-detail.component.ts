@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Apuesta }        from './apuesta';
-import { ApuestaService } from './apuesta.service';
+import { Mensaje }        from './Mensaje';
+import { MensajeService } from './Mensaje.service';
 import {Cliente} from './cliente';
 import {ClienteService} from './cliente.service';
 
 @Component({
-  selector: 'my-apuesta-detail',
-  templateUrl: 'app/apuesta-detail.component.html',
-  styleUrls: ['app/apuesta-detail.component.css']
+  selector: 'my-Mensaje-detail',
+  templateUrl: 'app/Mensaje-detail.component.html',
+  styleUrls: ['app/Mensaje-detail.component.css']
 })
-export class ApuestaDetailComponent implements OnInit {
-    apuesta: Apuesta;
+export class MensajeDetailComponent implements OnInit {
+    Mensaje: Mensaje;
     create: boolean;
     clientes: Cliente[];
     vacio: boolean;
 
   constructor(
-      private apuestaService: ApuestaService,
+      private MensajeService: MensajeService,
       private clienteService: ClienteService,
     private route: ActivatedRoute) {
   }
@@ -28,11 +28,11 @@ export class ApuestaDetailComponent implements OnInit {
         let id = +params['id'];
         if (id) {
             this.create = false;
-            this.apuestaService.getApuesta(id)
-                .then(apuesta => this.apuesta = apuesta);
+            this.MensajeService.getMensaje(id)
+                .then(Mensaje => this.Mensaje = Mensaje);
             
         } else {
-            this.apuesta = new Apuesta();
+            this.Mensaje = new Mensaje();
             this.create = true;
         }        
       });
@@ -43,20 +43,20 @@ export class ApuestaDetailComponent implements OnInit {
   
 
   save(): void {
-      if (!this.apuesta.textoUsuario || !this.apuesta.cantidad || !this.apuesta.UsrID || !this.apuesta.fechaApuesta) {
+      if (!this.Mensaje.textoUsuario || !this.Mensaje.cantidad || !this.Mensaje.UsrID || !this.Mensaje.fechaMensaje) {
           this.vacio = true;
       } else {
           this.vacio = false;
-          this.apuestaService.update(this.apuesta)
+          this.MensajeService.update(this.Mensaje)
               .then(this.goBack);
       }
   }
   add(): void {
-      if (!this.apuesta.textoUsuario || !this.apuesta.cantidad || !this.apuesta.UsrID || this.apuesta.fechaApuesta) {
+      if (!this.Mensaje.textoUsuario || !this.Mensaje.cantidad || !this.Mensaje.UsrID || this.Mensaje.fechaMensaje) {
           this.vacio = true;
       } else {
           this.vacio = false;
-          this.apuestaService.create(this.apuesta)
+          this.MensajeService.create(this.Mensaje)
               .then(this.goBack);
 
       }

@@ -1,21 +1,21 @@
-<h2>Listado de las apuestas en curso actualmente</h2>
+<h2>Listado de las Mensajes en curso actualmente</h2>
 <div>
     <button class="btn btn-success" style="color:white" (click)="gotoDetail()">
-        Crear una nueva Apuesta
+        Crear una nueva Mensaje
     </button>
 </div>
-<ul class="apuestas">
-  <li *ngFor="let apuesta of apuestas" (click)="onSelect(apuesta)"
-      [class.selected]="apuesta === selectedApuesta">
-    <span class="badge">{{apuesta.id}}</span>
-    <span>{{apuesta.cantidad}}</span>
+<ul class="Mensajes">
+  <li *ngFor="let Mensaje of Mensajes" (click)="onSelect(Mensaje)"
+      [class.selected]="Mensaje === selectedMensaje">
+    <span class="badge">{{Mensaje.id}}</span>
+    <span>{{Mensaje.cantidad}}</span>
     <button class="delete"
-      (click)="delete(apuesta)">x</button>
+      (click)="delete(Mensaje)">x</button>
   </li>
 </ul>
-<div *ngIf="selectedApuesta">
+<div *ngIf="selectedMensaje">
   <h2>
-    {{selectedApuesta.cantidad}} seleccionado
+    {{selectedMensaje.cantidad}} seleccionado
   </h2>
-  <button class="btn-info" style="color:white" (click)="gotoDetail()">Ver Apuesta</button>
+  <button class="btn-info" style="color:white" (click)="gotoDetail()">Ver Mensaje</button>
 </div>

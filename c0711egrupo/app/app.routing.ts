@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ClientesComponent }     from './clientes.component';
 import { ClienteDetailComponent } from './cliente-detail.component';
-import {ApuestasComponent} from './apuestas.component';
-import {ApuestaDetailComponent} from './apuesta-detail.component';
+import {MensajesComponent} from './Mensajes.component';
+import {MensajeDetailComponent} from './Mensaje-detail.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/apuestas',
+    redirectTo: '/Mensajes',
     pathMatch: 'full'
   },
   {
@@ -25,16 +25,16 @@ const appRoutes: Routes = [
       component: ClientesComponent
   },
   {
-      path: 'apuestas',
-      component: ApuestasComponent
+      path: 'Mensajes',
+      component: MensajesComponent
   },
   {
-      path: 'apuesta-details/:id',
-      component: ApuestaDetailComponent
+      path: 'Mensaje-details/:id',
+      component: MensajeDetailComponent
   },
   {
-      path: 'apuesta-details',
-      component: ApuestaDetailComponent
+      path: 'Mensaje-details',
+      component: MensajeDetailComponent
   }
 
 ];

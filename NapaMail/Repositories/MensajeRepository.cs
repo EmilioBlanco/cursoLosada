@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace c11eindividual.Repositories
 {
-    public class MensajeRepository
+    public class MensajeRepository : IMensajeRepository
     {
         public MensajeRepository() { }
 

@@ -2,51 +2,51 @@ import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 //angular.module('MyApp', ['ngMaterial', 'ngMessages', 'material.svgAssetsCache']);
 import {} from '@angular/module/ngMessages'
-import { Apuesta }                from './apuesta';
-import { ApuestaService }         from './apuesta.service';
+import { Mensaje }                from './Mensaje';
+import { MensajeService }         from './Mensaje.service';
 
 @Component({
-  selector: 'my-apuestas',
-  templateUrl: 'app/apuestas.component.html',
-  styleUrls:  ['app/apuestas.component.css']
+  selector: 'my-Mensajes',
+  templateUrl: 'app/Mensajes.component.html',
+  styleUrls:  ['app/Mensajes.component.css']
 })
-export class ApuestasComponent implements OnInit {
-  apuestas: Apuesta[];
-  selectedApuesta: Apuesta;
+export class MensajesComponent implements OnInit {
+  Mensajes: Mensaje[];
+  selectedMensaje: Mensaje;
 
   constructor(
-      private apuestaService: ApuestaService,
+      private MensajeService: MensajeService,
       private router: Router) { }
 
-  getApuestas(): void {
-      this.apuestaService
-          .getApuestas()
-        .then(apuestas => this.apuestas = apuestas);
+  getMensajes(): void {
+      this.MensajeService
+          .getMensajes()
+        .then(Mensajes => this.Mensajes = Mensajes);
   }
 
 
-  delete(apuesta: Apuesta): void {
-      this.apuestaService
-          .delete(apuesta.id)
+  delete(Mensaje: Mensaje): void {
+      this.MensajeService
+          .delete(Mensaje.id)
           .then(() => {
-              this.apuestas = this.apuestas.filter(apuesta2 => apuesta2 !== apuesta);
-          if (this.selectedApuesta === apuesta) { this.selectedApuesta = null; }
+              this.Mensajes = this.Mensajes.filter(Mensaje2 => Mensaje2 !== Mensaje);
+          if (this.selectedMensaje === Mensaje) { this.selectedMensaje = null; }
         });
   }
 
   ngOnInit(): void {
-    this.getApuestas();
+    this.getMensajes();
   }
 
-  onSelect(apuesta: Apuesta): void {
-    this.selectedApuesta = apuesta;
+  onSelect(Mensaje: Mensaje): void {
+    this.selectedMensaje = Mensaje;
   }
 
   gotoDetail(): void {
-      if (!this.selectedApuesta) {
-          this.router.navigate(['/apuesta-details']);
+      if (!this.selectedMensaje) {
+          this.router.navigate(['/Mensaje-details']);
       } else {
-          this.router.navigate(['/apuesta-details', this.selectedApuesta.id]);
+          this.router.navigate(['/Mensaje-details', this.selectedMensaje.id]);
       }
 
     

@@ -3,52 +3,52 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Apuesta } from './apuesta';
+import { Mensaje } from './Mensaje';
 
 @Injectable()
-export class ApuestaService {
+export class MensajeService {
 
     private headersAccept = new Headers({ 'Accept': 'application/json' });
     private headers = new Headers({ 'Content-Type': 'application/json' });
-  private apuestasUrl = 'api/apuestas';  // URL to web api
+  private MensajesUrl = 'api/Mensajes';  // URL to web api
 
   constructor(private http: Http) { }
 
-  getApuestas(): Promise<Apuesta[]> {
-    return this.http.get(this.apuestasUrl)
+  getMensajes(): Promise<Mensaje[]> {
+    return this.http.get(this.MensajesUrl)
                .toPromise()
-               .then(response => response.json() as Apuesta[])
+               .then(response => response.json() as Mensaje[])
                .catch(this.handleError);
   }
 
-  getApuesta(id: number): Promise<Apuesta> {
-    return this.getApuestas()
-               .then(apuestas => apuestas.find(apuesta => apuesta.id === id));
+  getMensaje(id: number): Promise<Mensaje> {
+    return this.getMensajes()
+               .then(Mensajes => Mensajes.find(Mensaje => Mensaje.id === id));
   }
 
   delete(id: number): Promise<void> {
-    let url = `${this.apuestasUrl}/${id}`;
+    let url = `${this.MensajesUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
       .catch(this.handleError);
   }
 
-  create(apuesta: Apuesta): Promise<Apuesta> {
+  create(Mensaje: Mensaje): Promise<Mensaje> {
       return this.http
-          .post(this.apuestasUrl, apuesta, { headers: this.headersAccept })
+          .post(this.MensajesUrl, Mensaje, { headers: this.headersAccept })
           .toPromise()
           .then(res => res.json())
           .catch(this.handleError);
   }
 
-  update(apuesta: Apuesta): Promise<Apuesta> {
-    const url = `${this.apuestasUrl}/${apuesta.id}`;
+  update(Mensaje: Mensaje): Promise<Mensaje> {
+    const url = `${this.MensajesUrl}/${Mensaje.id}`;
     return this.http
-        .put(url, JSON.stringify(apuesta),
+        .put(url, JSON.stringify(Mensaje),
         { headers: this.headers })
       .toPromise()
-      .then(() => apuesta)
+      .then(() => Mensaje)
       .catch(this.handleError);
   }
 

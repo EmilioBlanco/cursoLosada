@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace c11eindividual.Repositories
 {
-    public class UsuarioRepository 
+    public class UsuarioRepository : IUsuarioRepository
     {
         public UsuarioRepository() { }
 

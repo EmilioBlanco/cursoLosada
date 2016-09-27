@@ -12,9 +12,9 @@ import { AppComponent }         from './app.component';
 import { ClientesComponent }      from './clientes.component';
 import { ClienteDetailComponent }  from './cliente-detail.component';
 import { ClienteService }          from './cliente.service';
-import { ApuestasComponent }      from './apuestas.component';
-import { ApuestaDetailComponent }  from './apuesta-detail.component';
-import { ApuestaService }          from './apuesta.service';
+import { MensajesComponent }      from './Mensajes.component';
+import { MensajeDetailComponent }  from './Mensaje-detail.component';
+import { MensajeService }          from './Mensaje.service';
 import { routing }              from './app.routing';
 
 @NgModule({
@@ -29,12 +29,12 @@ import { routing }              from './app.routing';
     AppComponent,
     ClienteDetailComponent,
     ClientesComponent,
-    ApuestaDetailComponent,
-    ApuestasComponent,
+    MensajeDetailComponent,
+    MensajesComponent,
   ],
   providers: [
       ClienteService,
-      ApuestaService,
+      MensajeService,
   ],
   bootstrap: [ AppComponent ]
 })
