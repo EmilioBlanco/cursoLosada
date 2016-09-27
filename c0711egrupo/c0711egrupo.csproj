@@ -113,14 +113,10 @@
   <ItemGroup>
     <Content Include="a2docs.css" />
     <Content Include="app\app.component.css" />
-    <Content Include="app\apuesta-detail.component.css" />
-    <Content Include="app\apuesta-detail.component.html" />
-    <Content Include="app\apuestas.component.css" />
-    <Content Include="app\apuestas.component.html" />
-    <Content Include="app\cliente-detail.component.css" />
-    <Content Include="app\cliente-detail.component.html" />
-    <Content Include="app\clientes.component.css" />
-    <Content Include="app\clientes.component.html" />
+    <Content Include="app\mensaje-detail.component.css" />
+    <Content Include="app\mensaje-detail.component.html" />
+    <Content Include="app\mensajes.component.css" />
+    <Content Include="app\mensajes.component.html" />
     <Content Include="c11eindividual.csproj" />
     <Content Include="c11eindividual.csproj.user" />
     <Content Include="favicon.ico" />
@@ -169,21 +165,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\app.routing.ts" />
-    <TypeScriptCompile Include="app\apuesta-detail.component.ts" />
-    <TypeScriptCompile Include="app\apuesta.service.ts" />
-    <TypeScriptCompile Include="app\apuesta.ts" />
-    <TypeScriptCompile Include="app\apuestas.component.ts" />
-    <TypeScriptCompile Include="app\cliente-detail.component.ts" />
-    <TypeScriptCompile Include="app\cliente.service.ts" />
-    <TypeScriptCompile Include="app\cliente.ts" />
-    <TypeScriptCompile Include="app\clientes.component.ts" />
+    <TypeScriptCompile Include="app\in-memory-data-service.ts" />
+    <TypeScriptCompile Include="app\mensaje-detail.component.ts" />
+    <TypeScriptCompile Include="app\mensaje.service.ts" />
+    <TypeScriptCompile Include="app\mensaje.ts" />
+    <TypeScriptCompile Include="app\mensajes.component.ts" />
+    <TypeScriptCompile Include="app\usuario.service.ts" />
+    <TypeScriptCompile Include="app\usuario.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\rxjs-extensions.ts" />
   </ItemGroup>

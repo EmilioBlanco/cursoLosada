@@ -1,0 +1,20 @@
+label {
+  display: inline-block;
+  width: 8em;
+  margin: 1em 0;
+  color: #607D8B;
+  font-weight: bold;
+}
+input {
+  height: 2em;
+  font-size: 1em;
+  padding-left: 1em;
+}
+#txtCuerpo{
+    height: 150px !important;
+    width: 500px !important;
+    font-size:1em !important;
+}
+#divCuerpo *{
+    display:inline-block !important;
+}
