@@ -21,6 +21,18 @@ const appRoutes: Routes = [
   {
       path: 'mensaje-details',
       component: MensajeDetailComponent
+  },
+  {
+      path: 'papelera',
+      component: MensajesComponent
+  },
+  {
+      path: 'salida',
+      component: MensajesComponent
+  },
+  {
+      path: 'entrada',
+      component: MensajesComponent
   }
 
 ];

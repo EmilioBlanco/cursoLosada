@@ -4,13 +4,17 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Mensaje } from './mensaje';
+import {Usuario} from './usuario';
 
 @Injectable()
 export class MensajeService {
 
     private headersAccept = new Headers({ 'Accept': 'application/json' });
     private headers = new Headers({ 'Content-Type': 'application/json' });
-  private mensajeUrl = 'api/mensajes';  // URL to web api
+    private mensajeUrl = 'api/mensajes';  // URL to web api
+    private entradaUrl = 'api/entradas'; //URL entrada
+    private salidaUrl = 'api/salidas';//URL salidas
+    private papeleraUrl = 'api/papelera'; //URL papelera
 
   constructor(private http: Http) { }
 
@@ -24,6 +28,35 @@ export class MensajeService {
   getMensaje(id: number): Promise<Mensaje> {
     return this.getMensajes()
                .then(mensajes => mensajes.find(mensaje => mensaje.id === id));
+  }
+  getEntrada(): Promise<Mensaje[]> {
+      return this.http.get(this.entradaUrl)
+          .toPromise()
+          .then(response => response.json() as Mensaje[])
+          .catch(this.handleError);
+  }
+
+  getSalida(): Promise<Mensaje[]> {
+      return this.http.get(this.salidaUrl)
+          .toPromise()
+          .then(response => response.json() as Mensaje[])
+          .catch(this.handleError);
+  }
+  getPapelera(): Promise<Mensaje[]> {
+      return this.http.get(this.papeleraUrl)
+          .toPromise()
+          .then(response => response.json() as Mensaje[])
+          .catch(this.handleError);
+  }
+    
+
+  update(mensaje: Mensaje): Promise<Mensaje> {
+      const url = `${this.mensajeUrl}/${mensaje.id}`;
+      return this.http
+          .put(url, JSON.stringify(mensaje), { headers: this.headers })
+          .toPromise()
+          .then(() => mensaje)
+          .catch(this.handleError);
   }
 
   delete(id: number): Promise<void> {
