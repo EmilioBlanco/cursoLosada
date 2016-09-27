@@ -20,7 +20,7 @@ namespace c11eindividual.Controllers
     {
         private CorreoDB db = new CorreoDB();
 
-        // GET: api/Mensajes/1
+    
         public List<MensajeVo> GetTodos()
         {
             CorreoDB db = new CorreoDB();

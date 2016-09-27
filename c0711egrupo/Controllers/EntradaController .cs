@@ -25,11 +25,12 @@ namespace c11eindividual.Controllers
         // GET: api/Mensajes/1
         public List<MensajeVo> GetEntrada()
         {
+            Usuario s = (Usuario)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
             CorreoDB db = new CorreoDB();
             MensajeRepository MensajeRepository = new MensajeRepository();
             MensajeUtil MensajeUtil = new MensajeUtil();
             MensajeService MensajeService = new MensajeService(MensajeRepository, MensajeUtil);
-            return MensajeService.Todos(_id);
+            return MensajeService.Todos(s.id);
 
         }
      

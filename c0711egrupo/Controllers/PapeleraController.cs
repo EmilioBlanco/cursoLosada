@@ -24,11 +24,12 @@ namespace c11eindividual.Controllers
         // GET: api/Mensajes/1
         public List<MensajeVo> GetPapelera()
         {
+            Usuario s = (Usuario)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
             CorreoDB db = new CorreoDB();
             MensajeRepository MensajeRepository = new MensajeRepository();
             MensajeUtil MensajeUtil = new MensajeUtil();
             MensajeService MensajeService = new MensajeService(MensajeRepository, MensajeUtil);
-            return MensajeService.Papelera(_id);
+            return MensajeService.Papelera(s.id);
 
         }
        

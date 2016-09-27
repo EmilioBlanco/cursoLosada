@@ -19,7 +19,7 @@ namespace c11eindividual.Controllers
     public class UsuarioController : ApiController
     {
         private CorreoDB db = new CorreoDB();
-
+      
         // GET: api/Usuarios
         public List<UsuarioVo> GetlistUsuarios()
         {
@@ -28,6 +28,13 @@ namespace c11eindividual.Controllers
             UsuarioUtil UsuarioUtil = new UsuarioUtil();
             UsuarioService UsuarioService = new UsuarioService(UsuarioRepository, UsuarioUtil);
             return UsuarioService.Lista();
+
+        }
+        public UsuarioVo PostUsuario(UsuarioVo s){
+
+            System.Web.HttpContext.Current.Session["UsuariLoggeado"]=s;
+
+            return s;
 
         }
         
