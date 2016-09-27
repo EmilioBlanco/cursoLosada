@@ -14,8 +14,8 @@ namespace c11eindividual.Utilities
             Mensaje ap = new Mensaje()
             {
                 id = a.id,
-                emisor = a.emisor,
-                receptor=a.receptor,
+                EmisorID = a.EmisorID,
+                ReceptorID=a.ReceptorID,
                 fecha = a.fecha,
                 asunto = a.asunto,
                 cuerpo = a.cuerpo,
@@ -32,8 +32,8 @@ namespace c11eindividual.Utilities
             MensajeVo ap = new MensajeVo()
             {
                 id = a.id,
-                emisor = a.emisor,
-                receptor = a.receptor,
+                EmisorID = a.EmisorID,
+                ReceptorID = a.ReceptorID,
                 fecha = a.fecha,
                 asunto = a.asunto,
                 cuerpo = a.cuerpo,

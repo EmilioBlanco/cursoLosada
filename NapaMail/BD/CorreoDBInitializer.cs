@@ -23,9 +23,9 @@ namespace c11eindividual.BD
 
 
 
-            defaultMensajes.Add(new Mensaje() { asunto = "Mail Bienvenida", emisor = 1, receptor = 5,bandeja=true,cuerpo= "Te damos la bienvenida al servicio de mensajeria. \n Servicio de administración ", fecha = new DateTime(2016, 9, 26, 17, 29, 27) });
-            defaultMensajes.Add(new Mensaje() { asunto = "Prueba de correo", emisor = 3, receptor = 5, bandeja = true, cuerpo = " Hola esto es un correo \n María DelaÓ ", fecha = new DateTime(2016, 9, 27,10, 9, 13) });
-            defaultMensajes.Add(new Mensaje() {asunto="Mail cambio de Rol", emisor = 2, receptor = 4, bandeja = true, cuerpo = " Para seguir creciendo como correo prioritario de nuestros usuarios, ha sido ascendido a administrador de la página.\n Losadianos del séptimo día ", fecha = new DateTime(2016, 9, 27, 10, 9, 13) });
+            defaultMensajes.Add(new Mensaje() { asunto = "Mail Bienvenida", EmisorID = 1, ReceptorID = 5,bandeja=true,cuerpo= "Te damos la bienvenida al servicio de mensajeria. \n Servicio de administración ", fecha = new DateTime(2016, 9, 26, 17, 29, 27) });
+            defaultMensajes.Add(new Mensaje() { asunto = "Prueba de correo", EmisorID = 3, ReceptorID = 5, bandeja = true, cuerpo = " Hola esto es un correo \n María DelaÓ ", fecha = new DateTime(2016, 9, 27,10, 9, 13) });
+            defaultMensajes.Add(new Mensaje() {asunto="Mail cambio de Rol", EmisorID = 2, ReceptorID = 4, bandeja = true, cuerpo = " Para seguir creciendo como correo prioritario de nuestros usuarios, ha sido ascendido a administrador de la página.\n Losadianos del séptimo día ", fecha = new DateTime(2016, 9, 27, 10, 9, 13) });
 
 
             foreach (Usuario u in defaultUsuarios)
