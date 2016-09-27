@@ -10,7 +10,7 @@ export class UsuarioService {
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
     private headersAccept = new Headers({ 'Accept': 'application/json' });
-  private usuariosUrl = 'api/usuarios';  // URL to web api
+    private usuariosUrl = 'api/usuarios';  // URL to web api
 
   constructor(private http: Http) { }
 
@@ -25,6 +25,15 @@ export class UsuarioService {
     return this.getUsuarios()
                .then(users => users.find(usuario => usuario.id === id));
   }
+
+  update(usuario: Usuario): Promise<Usuario> {
+      const url = `${this.usuariosUrl}/${usuario.id}`;
+      return this.http
+          .put(url, JSON.stringify(usuario), { headers: this.headers })
+          .toPromise()
+          .then(() => usuario)
+          .catch(this.handleError);
+  } 
 
   /*delete(id: number): Promise<boolean> {
     let url = `${this.clientesUrl}/${id}`;
@@ -42,14 +51,7 @@ export class UsuarioService {
       .catch(this.handleError);
   }
 
-  update(cliente: Cliente): Promise<Cliente> {
-    const url = `${this.clientesUrl}/${cliente.id}`;
-    return this.http
-      .put(url, JSON.stringify(cliente), {headers: this.headers})
-      .toPromise()
-      .then(() => cliente)
-      .catch(this.handleError);
-  }*/
+*/
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
