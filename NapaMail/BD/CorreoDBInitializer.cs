@@ -16,16 +16,16 @@ namespace c11eindividual.BD
            
 
             defaultUsuarios.Add(new Usuario() { nombre = "Emilio",Administrador =true });
-            defaultUsuarios.Add(new Usuario() { nombre = "Juan Antonio", Administrador = true });
+            defaultUsuarios.Add(new Usuario() { nombre = "Juan", Administrador = true });
             defaultUsuarios.Add(new Usuario() { nombre = "Maria", Administrador = false });
             defaultUsuarios.Add(new Usuario() { nombre = "Elisabet", Administrador = true });
             defaultUsuarios.Add(new Usuario() { nombre = "Eduardo", Administrador = false });
 
 
 
-            defaultMensajes.Add(new Mensaje() { asunto = "ÑapaMail Bienvenida", emisor = 1, receptor = 5,bandeja=true,cuerpo= "Siendo puristas,\n Os damos la bienvenida al servicio de mensajeria ÑapaMail. Y recordad nuestro eslogan:\n \"A grandes fallos...No es nuestro departamento\" \n Servicio de administración ", fecha = new DateTime(2016, 9, 26, 17, 29, 27) });
-            defaultMensajes.Add(new Mensaje() { asunto = "I don't know why", emisor = 3, receptor = 5, bandeja = true, cuerpo = "Siendo puristas,\n Te agradecería que no fueses tan cansino \n María DelaÓ ", fecha = new DateTime(2016, 9, 27,10, 9, 13) });
-            defaultMensajes.Add(new Mensaje() {asunto="ÑapaMail cambio de Rol", emisor = 2, receptor = 4, bandeja = true, cuerpo = "Siendo puristas, \n Para seguir creciendo como correo prioritario de nuestros usuarios, ha sido ascendido a administrador de la página.Y recuerde nuestro eslogan en caso de duda:\n \"A grandes fallos...No es nuestro departamento\" \n Losadianos del séptimo día ", fecha = new DateTime(2016, 9, 27, 10, 9, 13) });
+            defaultMensajes.Add(new Mensaje() { asunto = "Mail Bienvenida", emisor = 1, receptor = 5,bandeja=true,cuerpo= "Te damos la bienvenida al servicio de mensajeria. \n Servicio de administración ", fecha = new DateTime(2016, 9, 26, 17, 29, 27) });
+            defaultMensajes.Add(new Mensaje() { asunto = "Prueba de correo", emisor = 3, receptor = 5, bandeja = true, cuerpo = " Hola esto es un correo \n María DelaÓ ", fecha = new DateTime(2016, 9, 27,10, 9, 13) });
+            defaultMensajes.Add(new Mensaje() {asunto="Mail cambio de Rol", emisor = 2, receptor = 4, bandeja = true, cuerpo = " Para seguir creciendo como correo prioritario de nuestros usuarios, ha sido ascendido a administrador de la página.\n Losadianos del séptimo día ", fecha = new DateTime(2016, 9, 27, 10, 9, 13) });
 
 
             foreach (Usuario u in defaultUsuarios)
