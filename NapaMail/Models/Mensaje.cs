@@ -15,7 +15,6 @@ namespace c11eindividual.Models
         public DateTime fecha { get; set; }
         public Boolean leido { get; set; }
         public Boolean bandeja { get; set; }
-  
         public int EmisorID { get; set; }
         [ForeignKey("EmisorID")]
         public virtual Usuario eUsuario { get; set; }

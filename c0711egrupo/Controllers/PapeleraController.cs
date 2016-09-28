@@ -13,7 +13,7 @@ namespace c11eindividual.Controllers
         private CorreoDB db = new CorreoDB();
 
 
-        // GET: api/Mensajes/1
+        // GET: api/Mensaje/1
         public List<MensajeVo> GetPapelera()
         {
             Usuario s = (Usuario)System.Web.HttpContext.Current.Session["UsuariLoggeado"];

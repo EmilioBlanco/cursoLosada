@@ -18,7 +18,7 @@ namespace c11eindividual.Controllers
     {
         private CorreoDB db = new CorreoDB();
       
-        // GET: api/Usuarios
+        // GET: api/Usuario
         public List<UsuarioVo> GetlistUsuarios()
         {
             CorreoDB db = new CorreoDB();
