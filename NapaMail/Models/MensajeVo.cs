@@ -15,11 +15,10 @@ namespace c11eindividual.Models
         public DateTime fecha { get; set; }
         public Boolean leido { get; set; }
         public Boolean bandeja { get; set; }
-        public int emisor { get; set; }
-        [ForeignKey("emisor")]
+        public int EmisorID { get; set; }
         public virtual UsuarioVo eUsuario { get; set; }
-        public int receptor { get; set; }
-        [ForeignKey("receptor")]
+        public int ReceptorID { get; set; }
+
         public virtual UsuarioVo rUsuario { get; set; }
 
         public MensajeVo() { }
