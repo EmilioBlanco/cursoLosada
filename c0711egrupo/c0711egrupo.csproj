@@ -117,6 +117,8 @@
     <Content Include="app\mensaje-detail.component.html" />
     <Content Include="app\mensajes.component.css" />
     <Content Include="app\mensajes.component.html" />
+    <Content Include="app\usuarios.component.css" />
+    <Content Include="app\usuarios.component.html" />
     <Content Include="c11eindividual.csproj" />
     <Content Include="c11eindividual.csproj.user" />
     <Content Include="favicon.ico" />
@@ -176,6 +178,7 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\app.routing.ts" />
+    <TypeScriptCompile Include="app\usuario.component.ts" />
     <TypeScriptCompile Include="app\in-memory-data-service.ts" />
     <TypeScriptCompile Include="app\mensaje-detail.component.ts" />
     <TypeScriptCompile Include="app\mensaje.service.ts" />

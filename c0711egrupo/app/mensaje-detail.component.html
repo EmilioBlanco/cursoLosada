@@ -1,7 +1,7 @@
 <div *ngIf="create">
     <div>
         <label>EmisorID: </label>
-        <label [(ngModel)]="mensaje.EmisorIDID">{{}}</label>
+        <label [(ngModel)]="mensaje.EmisorIDID">{{usuario.emisor}}</label>
     </div>
     <div>
         <label>ReceptorID: </label>
@@ -24,6 +24,7 @@
     </div>
   <button class="btn btn-toolbar" style="color:black !important;" (click)="goBack()">Atras</button>
 </div>
+<div>
     <h2>Mensaje </h2>
     <div>
         <label>EmisorID: </label>
@@ -46,3 +47,4 @@
         <label [(ngModel)]="mensaje.cuerpo"></label>
     </div>
     <button class="btn btn-toolbar" style="color:black !important;" (click)="goBack()">Atras</button>
+</div>
