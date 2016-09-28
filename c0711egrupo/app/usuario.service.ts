@@ -15,7 +15,7 @@ export class UsuarioService {
   constructor(private http: Http) { }
 
   getUsuarios(): Promise<Usuario[]> {
-      return this.http.get('api/usuario')
+      return this.http.get(this.usuariosUrl)
           .toPromise().then(
           response =>
               response.json() as Usuario[]
@@ -23,6 +23,11 @@ export class UsuarioService {
                .catch(this.handleError);
   }
 
+  update(usuario: Usuario): void
+  {
+      this.http.post(this.usuariosUrl, usuario, { headers: this.headersAccept }).toPromise().then(response => console.log(response.json()));
+      
+  }
   //getUsuario(id: number): Promise<Usuario> {
   //  return this.getUsuarios()
   //             .then(users => users.find(usuario => usuario.id === id));

@@ -9,8 +9,8 @@ import { ActivatedRoute, Params } from '@angular/router';
     <head><base href="/"/> </head>
     <h2>{{title}}</h2>
     <div *ngIf="listo">
-    <select id="cmbSelectedCliente" [(ngModel)]="usuario.id">
-        <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{usuario.nombre}}</option>
+    <select id="cmbSelectedCliente"[(ngModel)]="selectedUsuario" (change)="onChange($event.target.value)">
+        <option *ngFor="let usuario of usuarios" [value]="usuario.id" >{{usuario.nombre}}</option>
     </select>
     </div> 
     <nav>
@@ -28,7 +28,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class AppComponent {
     title = 'Nhapa Mail';
     usuarios: Usuario[];
-    usuario: Usuario;
+    selectedUsuario: Usuario;
     listo: boolean;
 
     constructor(
@@ -39,9 +39,13 @@ export class AppComponent {
         this.listo = false;
         this.usuarioService.getUsuarios()
             .then(usuarios => this.usuarios = usuarios)
-            .then(users => this.usuario = users[0])
             .then(users => this.listo = true);
-        //setTimeout(500);
+    }
+    onChange(usuarioSeleccionado: Usuario)
+    {
+        this.selectedUsuario = usuarioSeleccionado;
+        console.log(this.selectedUsuario);
+        this.usuarioService.update(this.selectedUsuario);
     }
 
 }
