@@ -18,7 +18,6 @@ namespace c11eindividual.Models
         public int EmisorID { get; set; }
         public virtual UsuarioVo eUsuario { get; set; }
         public int ReceptorID { get; set; }
-
         public virtual UsuarioVo rUsuario { get; set; }
 
         public MensajeVo() { }

@@ -25,7 +25,7 @@ namespace c11eindividual.Repositories
                         .Include(a => a.eUsuario)
                         .Include(a => a.rUsuario)
                         .Where(a2 => a2.id == ap.id)
-                        .Where(a2 => a2.emisor == _id || a2.receptor == _id)
+                        .Where(a2 => a2.EmisorID == _id || a2.ReceptorID == _id)
                         .FirstOrDefault();
                     aRetornar.Add(ap2);
 
@@ -45,7 +45,7 @@ namespace c11eindividual.Repositories
                         .Include(a => a.eUsuario)
                         .Include(a => a.rUsuario)
                         .Where(a2 => a2.id == ap.id)
-                        .Where(a2 => a2.receptor == _id)
+                        .Where(a2 => a2.ReceptorID == _id)
                         .Where(a2 => a2.bandeja == true)
                         .FirstOrDefault();
                     aRetornar.Add(ap2);
@@ -66,7 +66,7 @@ namespace c11eindividual.Repositories
                         .Include(a => a.eUsuario)
                         .Include(a => a.rUsuario)
                         .Where(a2 => a2.id == ap.id)
-                        .Where(a2 => a2.emisor == _id)
+                        .Where(a2 => a2.EmisorID == _id)
                         .Where(a2 => a2.bandeja == true)
                         .FirstOrDefault();
                     aRetornar.Add(ap2);
@@ -87,7 +87,7 @@ namespace c11eindividual.Repositories
                         .Include(a => a.eUsuario)
                         .Include(a => a.rUsuario)
                         .Where(a2 => a2.id == ap.id)
-                        .Where(a2 => a2.emisor == _id || a2.receptor == _id)
+                        .Where(a2 => a2.EmisorID == _id || a2.ReceptorID == _id)
                         .Where(a2 => a2.bandeja == false)
                         .FirstOrDefault();
                     aRetornar.Add(ap2);

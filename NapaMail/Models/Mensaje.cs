@@ -16,11 +16,13 @@ namespace c11eindividual.Models
         public Boolean leido { get; set; }
         public Boolean bandeja { get; set; }
   
-        public int emisor { get; set; }
-        [ForeignKey("emisor")]
+        public int EmisorID { get; set; }
+        [ForeignKey("EmisorID")]
+        [InverseProperty("Mensajes")]
         public virtual Usuario eUsuario { get; set; }
-        public int receptor { get; set; }
-        [ForeignKey("receptor")]
+        public int ReceptorID { get; set; }
+        [ForeignKey("ReceptorID")]
+        [InverseProperty("Mensajes")]
         public virtual Usuario rUsuario { get; set; }
 
         public Mensaje() { }

@@ -1,11 +1,11 @@
 <div *ngIf="create">
     <div>
-        <label>Emisor: </label>
-        <label [(ngModel)]="mensaje.emisorID">{{}}</label>
+        <label>EmisorID: </label>
+        <label [(ngModel)]="mensaje.EmisorIDID">{{}}</label>
     </div>
     <div>
-        <label>Receptor: </label>
-        <select id="cmbEmisor" [(ngModel)]="mensaje.receptorID">
+        <label>ReceptorID: </label>
+        <select id="cmbEmisorID" [(ngModel)]="mensaje.ReceptorIDID">
             <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{usuario.nombre}}</option>
         </select>
     </div>
@@ -26,12 +26,12 @@
 </div>
     <h2>Mensaje </h2>
     <div>
-        <label>Emisor: </label>
-        <label [(ngModel)]="mensaje.emisorID">{{mensaje.emisor}}</label>
+        <label>EmisorID: </label>
+        <label [(ngModel)]="mensaje.EmisorIDID">{{mensaje.EmisorID}}</label>
     </div>
     <div>
-        <label>Receptor: </label>
-        <label id="cmbEmisor" [(ngModel)]="mensaje.receptorID">{{mensaje.receptor}}</label>
+        <label>ReceptorID: </label>
+        <label id="cmbEmisorID" [(ngModel)]="mensaje.ReceptorIDID">{{mensaje.ReceptorID}}</label>
     </div>
     <div>
         <label>Asunto:</label>
