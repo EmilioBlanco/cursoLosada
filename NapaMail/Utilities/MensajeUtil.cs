@@ -8,7 +8,7 @@ namespace c11eindividual.Utilities
 {
     public class MensajeUtil : IMensajeUtil
     {
-        public IUsuarioUtil userUtil;
+        public IUsuarioUtil userUtil = new UsuarioUtil();
         public Mensaje ConvertVO2Entity(MensajeVo a)
         {
             Mensaje ap = new Mensaje()
