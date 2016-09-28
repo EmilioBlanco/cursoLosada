@@ -35,7 +35,7 @@ export class MensajesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getMensajes();
+    //this.getMensajes();
   }
 
   onSelect(mensaje: Mensaje): void {
