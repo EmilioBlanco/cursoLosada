@@ -18,11 +18,9 @@ namespace c11eindividual.Models
   
         public int EmisorID { get; set; }
         [ForeignKey("EmisorID")]
-        [InverseProperty("Mensajes")]
         public virtual Usuario eUsuario { get; set; }
         public int ReceptorID { get; set; }
         [ForeignKey("ReceptorID")]
-        [InverseProperty("Mensajes")]
         public virtual Usuario rUsuario { get; set; }
 
         public Mensaje() { }
