@@ -11,9 +11,9 @@ export class MensajeService {
 
     private headersAccept = new Headers({ 'Accept': 'application/json' });
     private headers = new Headers({ 'Content-Type': 'application/json' });
-    private mensajeUrl = 'api/mensajes';  // URL to web api
-    private entradaUrl = 'api/entradas'; //URL entrada
-    private salidaUrl = 'api/salidas';//URL salidas
+    private mensajeUrl = 'api/mensaje';  // URL to web api
+    private entradaUrl = 'api/entrada'; //URL entrada
+    private salidaUrl = 'api/salida';//URL salidas
     private papeleraUrl = 'api/papelera'; //URL papelera
 
   constructor(private http: Http) { }

@@ -1,10 +1,10 @@
 import {Usuario} from './usuario';
 export class Mensaje {
     id: number;
-    EmisorIDID: number;
-    EmisorID: Usuario;
-    ReceptorIDID: number;
-    ReceptorID: Usuario;
+    EmisorID: number;
+    eUsuario: Usuario;
+    ReceptorID: number;
+    rUsuario: Usuario;
     asunto: string;
     fecha: string;
     cuerpo: string;
