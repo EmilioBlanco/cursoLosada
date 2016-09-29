@@ -4,7 +4,7 @@
         Redactar
     </button>
 </div>
-<ul class="mensajes">
+<ul class="mensajess">
   <li *ngFor="let mensaje of mensajes" (click)="onSelect(mensaje)"
       [class.selected]="mensaje === selectedMensaje">
     <span class="badge">{{mensaje.id}}</span>
