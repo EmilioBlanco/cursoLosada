@@ -1,17 +1,17 @@
 <div *ngIf="create">
     <div>
         <label>EmisorID: </label>
-        <label [(ngModel)]="mensaje.EmisorIDID">{{usuario.emisor}}</label>
+        <label [(ngModel)]="mensaje.EmisorID">{{mensaje.eUsuario.nombre}}</label>
     </div>
     <div>
         <label>ReceptorID: </label>
-        <select id="cmbEmisorID" [(ngModel)]="mensaje.ReceptorIDID">
+        <select id="cmbEmisorID" [(ngModel)]="mensaje.ReceptorID">
             <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{usuario.nombre}}</option>
         </select>
     </div>
     <div>
         <label>Asunto:</label>
-        <input type="text" id="txtAsunto" />
+        <input type="text" id="txtAsunto" placeholder="Asunto" />
     </div>
     <div>
     <label>Fecha: </label>
@@ -24,15 +24,15 @@
     </div>
   <button class="btn btn-toolbar" style="color:black !important;" (click)="goBack()">Atras</button>
 </div>
-<div>
+<div *ngIf="mensaje && !create" >
     <h2>Mensaje </h2>
     <div>
         <label>EmisorID: </label>
-        <label [(ngModel)]="mensaje.EmisorIDID">{{mensaje.EmisorID}}</label>
+        <label [(ngModel)]="mensaje.EmisorID">{{mensaje.EmisorID}}</label>
     </div>
     <div>
         <label>ReceptorID: </label>
-        <label id="cmbEmisorID" [(ngModel)]="mensaje.ReceptorIDID">{{mensaje.ReceptorID}}</label>
+        <label id="cmbEmisorID" [(ngModel)]="mensaje.ReceptorID">{{mensaje.ReceptorID}}</label>
     </div>
     <div>
         <label>Asunto:</label>

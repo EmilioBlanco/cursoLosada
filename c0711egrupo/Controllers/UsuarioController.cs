@@ -32,7 +32,7 @@ namespace c11eindividual.Controllers
 
             System.Web.HttpContext.Current.Session["UsuariLoggeado"]=s;
 
-            return s;
+            return (UsuarioVo)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
 
         }
         

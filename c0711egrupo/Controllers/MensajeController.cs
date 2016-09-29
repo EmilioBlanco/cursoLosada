@@ -16,17 +16,19 @@ namespace c11eindividual.Controllers
 {
     public class MensajeController : ApiController
     {
-        private CorreoDB db = new CorreoDB();
-
+        
     
         public List<MensajeVo> GetTodos()
         {
-            CorreoDB db = new CorreoDB();
-            Usuario s = (Usuario)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
-            MensajeRepository MensajeRepository = new MensajeRepository();
-            MensajeUtil MensajeUtil = new MensajeUtil();
-            MensajeService MensajeService = new MensajeService(MensajeRepository, MensajeUtil);
-            return MensajeService.Todos(s.id);
+            using (CorreoDB db = new CorreoDB()) {
+                System.Web.HttpContext.Current.Session["UsuariLoggeado"] = db.Usuarios.Find(1);
+                Usuario s = (Usuario)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
+                MensajeRepository MensajeRepository = new MensajeRepository();
+                MensajeUtil MensajeUtil = new MensajeUtil();
+                MensajeService MensajeService = new MensajeService(MensajeRepository, MensajeUtil);
+                return MensajeService.Todos(s.id);
+            }
+                
 
         }
         // GET: api/Mensajes/5
