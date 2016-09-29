@@ -16,17 +16,19 @@ namespace c11eindividual.Controllers
 {
     public class MensajeController : ApiController
     {
-        
+
+        UsuarioUtil usuarioUtil;
     
         public List<MensajeVo> GetTodos()
         {
             using (CorreoDB db = new CorreoDB()) {
-                System.Web.HttpContext.Current.Session["UsuariLoggeado"] = 1;
-                int usuariID = (int)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
+                usuarioUtil = new UsuarioUtil();
+                System.Web.HttpContext.Current.Session["UsuariLoggeado"] = usuarioUtil.ConvertEntity2VO(db.Usuarios.Find(1));
+                UsuarioVo usuario = (UsuarioVo)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
                 MensajeRepository MensajeRepository = new MensajeRepository();
                 MensajeUtil MensajeUtil = new MensajeUtil();
                 MensajeService MensajeService = new MensajeService(MensajeRepository, MensajeUtil);
-                return MensajeService.Todos(usuariID);
+                return MensajeService.Todos(usuario.id);
             }
                 
 

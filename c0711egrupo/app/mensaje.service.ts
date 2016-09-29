@@ -26,7 +26,6 @@ export class MensajeService {
   }
 
   getMensaje(id: number): Promise<Mensaje> {
-      debugger
       var a = this.http.get(this.mensajeUrl + '/' + id)
           .toPromise()
           .then(response =>

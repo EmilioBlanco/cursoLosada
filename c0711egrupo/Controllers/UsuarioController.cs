@@ -16,29 +16,27 @@ namespace c11eindividual.Controllers
 {
     public class UsuarioController : ApiController
     {
-        private CorreoDB db = new CorreoDB();
-      
+
         // GET: api/Usuario
-        public List<UsuarioVo> GetlistUsuarios()
+        public List<UsuarioVo> GetListUsuarios()
         {
             CorreoDB db = new CorreoDB();
-            UsuarioRepository UsuarioRepository = new UsuarioRepository();
-            UsuarioUtil UsuarioUtil = new UsuarioUtil();
-            UsuarioService UsuarioService = new UsuarioService(UsuarioRepository, UsuarioUtil);
-            return UsuarioService.Lista();
+            UsuarioRepository usuarioRepository = new UsuarioRepository();
+            UsuarioUtil usuarioUtil = new UsuarioUtil();
+            UsuarioService usuarioService = new UsuarioService(usuarioRepository, usuarioUtil);
+            return usuarioService.Lista();
+        }
+
+        // POST: api/Usuario/5
+        public UsuarioVo PutUsuario(UsuarioVo usuario)
+        {
+            CorreoDB db = new CorreoDB();
+            System.Web.HttpContext.Current.Session["UsuariLoggeado"] = usuario;
+            UsuarioVo user = (UsuarioVo)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
+            return user;
 
         }
-        //POST: api/usuario
-        [AcceptVerbs("POST")]
-        [HttpPost]
-        public int Post(int id){
 
-            System.Web.HttpContext.Current.Session["UsuariLoggeado"]=id;
-
-            return (int)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
-
-        }
         
-       
-    }     
-}
+    }
+}     

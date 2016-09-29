@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { MensajesComponent }     from './mensajes.component';
 import { MensajeDetailComponent } from './mensaje-detail.component';
 import { SalidaComponent } from './salida.component';
+import {PapeleraComponent} from './papelera.component';
+import {EntradaComponent} from './entrada.component';
 
 const appRoutes: Routes = [
   {
@@ -25,7 +27,7 @@ const appRoutes: Routes = [
   },
   {
       path: 'papelera',
-      component: MensajesComponent
+      component: PapeleraComponent
   },
   {
       path: 'salida',
@@ -33,7 +35,7 @@ const appRoutes: Routes = [
   },
   {
       path: 'entrada',
-      component: MensajesComponent
+      component: EntradaComponent
   }
 
 ];

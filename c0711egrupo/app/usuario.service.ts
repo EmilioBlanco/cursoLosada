@@ -23,10 +23,12 @@ export class UsuarioService {
                .catch(this.handleError);
   }
 
-  update(usuarioID: number): Promise<number>
+  update(usuario: Usuario): Promise<Usuario>
   {
-      
-      return this.http.post(this.usuariosUrl, JSON.stringify(usuarioID), { headers: this.headersAccept }).toPromise().then(response => response.json() as number);
+
+      return this.http.put(this.usuariosUrl, JSON.stringify(usuario), { headers: this.headers })
+          .toPromise()
+          .then(()=> usuario);
       
   }
   //getUsuario(id: number): Promise<Usuario> {

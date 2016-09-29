@@ -49,7 +49,8 @@ namespace c11eindividual.Repositories
                         .Where(a2 => a2.ReceptorID == _id)
                         .Where(a2 => a2.bandeja == true)
                         .FirstOrDefault();
-                    aRetornar.Add(ap2);
+                    if(ap2!=null)
+                        aRetornar.Add(ap2);
 
                 }
                 return aRetornar;
@@ -70,7 +71,8 @@ namespace c11eindividual.Repositories
                         .Where(a2 => a2.EmisorID == _id)
                         .Where(a2 => a2.bandeja == true)
                         .FirstOrDefault();
-                    aRetornar.Add(ap2);
+                    if(ap2 != null)
+                        aRetornar.Add(ap2);
 
                 }
                 return aRetornar;
@@ -91,7 +93,8 @@ namespace c11eindividual.Repositories
                         .Where(a2 => a2.EmisorID == _id || a2.ReceptorID == _id)
                         .Where(a2 => a2.bandeja == false)
                         .FirstOrDefault();
-                    aRetornar.Add(ap2);
+                    if(ap2 != null)
+                        aRetornar.Add(ap2);
 
                 }
                 return aRetornar;

@@ -28,7 +28,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class AppComponent {
     title = 'This.youMaiL';
     usuarios: Usuario[];
-    selectedUsuario: number;
+    selectedUsuario: Usuario;
     listo: boolean;
 
     constructor(
@@ -44,10 +44,8 @@ export class AppComponent {
     }
     onChange(usuarioSeleccionado: number)
     {
-        this.selectedUsuario = usuarioSeleccionado;
-        this.usuarioService.update(this.selectedUsuario)
-            .then(usuarioID => this.selectedUsuario = usuarioID)
-            .then(usuarioID => console.log(usuarioID));
+        this.selectedUsuario = this.usuarios[usuarioSeleccionado-1];
+        this.usuarioService.update(this.selectedUsuario);
     }
 
 }

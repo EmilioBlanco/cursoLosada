@@ -16,11 +16,11 @@ namespace c11eindividual.Controllers
         // GET: api/Mensaje/1
         public List<MensajeVo> GetPapelera()
         {
-            int usuarioID = (int)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
+            UsuarioVo usuario = (UsuarioVo)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
             MensajeRepository MensajeRepository = new MensajeRepository();
             MensajeUtil MensajeUtil = new MensajeUtil();
             MensajeService MensajeService = new MensajeService(MensajeRepository, MensajeUtil);
-            return MensajeService.Papelera(usuarioID);
+            return MensajeService.Papelera(usuario.id);
 
         }
        

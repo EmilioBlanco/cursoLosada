@@ -28,11 +28,11 @@
     <h2>Mensaje </h2>
     <div>
         <label>EmisorID: </label>
-        <label ngDefaultControl [(ngModel)]="mensaje.EmisorID">{{mensaje.EmisorID}}</label>
+        <label ngDefaultControl [(ngModel)]="mensaje.EmisorID">{{mensaje.eUsuario.nombre}}</label>
     </div>
     <div>
         <label>ReceptorID: </label>
-        <label ngDefaultControl id="cmbEmisorID" [(ngModel)]="mensaje.ReceptorID">{{mensaje.ReceptorID}}</label>
+        <label ngDefaultControl id="cmbEmisorID" [(ngModel)]="mensaje.ReceptorID">{{mensaje.rUsuario.nombre}}</label>
     </div>
     <div>
         <label>Asunto:</label>
