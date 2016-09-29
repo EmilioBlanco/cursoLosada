@@ -28,7 +28,7 @@ namespace c11eindividual.Controllers
             return UsuarioService.Lista();
 
         }
-        public UsuarioVo PostUsuario(UsuarioVo s){
+        public UsuarioVo PutUsuario(UsuarioVo s){
 
             System.Web.HttpContext.Current.Session["UsuariLoggeado"]=s;
 
