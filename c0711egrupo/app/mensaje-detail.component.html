@@ -1,7 +1,7 @@
 <div *ngIf="create">
     <div>
         <label>EmisorID: </label>
-        <label [(ngModel)]="mensaje.EmisorID">{{mensaje.eUsuario.nombre}}</label>
+        <label [(ngModel)]="mensaje.eUsuario.nombre">{{mensaje.eUsuario.nombre}}</label>
     </div>
     <div>
         <label>ReceptorID: </label>
@@ -28,23 +28,23 @@
     <h2>Mensaje </h2>
     <div>
         <label>EmisorID: </label>
-        <label [(ngModel)]="mensaje.EmisorID">{{mensaje.EmisorID}}</label>
+        <label ngDefaultControl [(ngModel)]="mensaje.EmisorID">{{mensaje.EmisorID}}</label>
     </div>
     <div>
         <label>ReceptorID: </label>
-        <label id="cmbEmisorID" [(ngModel)]="mensaje.ReceptorID">{{mensaje.ReceptorID}}</label>
+        <label ngDefaultControl id="cmbEmisorID" [(ngModel)]="mensaje.ReceptorID">{{mensaje.ReceptorID}}</label>
     </div>
     <div>
         <label>Asunto:</label>
-        <label id="txtAsunto" [(ngModel)]="mensaje.asunto"></label>
+        <label ngDefaultControl id="txtAsunto" [(ngModel)]="mensaje.asunto">{{mensaje.asunto}}</label>
     </div>
     <div>
         <label>Fecha: </label>
-        <label [(ngModel)]="mensaje.fecha"></label>
+        <label ngDefaultControl [(ngModel)]="mensaje.fecha">{{mensaje.fecha}}</label>
     </div>
     <div>
         <label>Cuerpo: </label>
-        <label [(ngModel)]="mensaje.cuerpo"></label>
+        <label ngDefaultControl [(ngModel)]="mensaje.cuerpo">{{mensaje.cuerpo}}</label>
     </div>
     <button class="btn btn-toolbar" style="color:black !important;" (click)="goBack()">Atras</button>
 </div>

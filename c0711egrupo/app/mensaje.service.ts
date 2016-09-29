@@ -27,9 +27,11 @@ export class MensajeService {
 
   getMensaje(id: number): Promise<Mensaje> {
       debugger
-      return this.http.get(this.mensajeUrl + '/' + id)
+      var a = this.http.get(this.mensajeUrl + '/' + id)
           .toPromise()
-          .then(response => response.json() as Mensaje);
+          .then(response =>
+              response.json() as Mensaje);
+      return a;
   }
   getEntrada(): Promise<Mensaje[]> {
       return this.http.get(this.entradaUrl)

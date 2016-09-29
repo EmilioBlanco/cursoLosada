@@ -23,9 +23,10 @@ export class UsuarioService {
                .catch(this.handleError);
   }
 
-  update(usuario: Usuario): void
+  update(usuarioID: number): Promise<number>
   {
-      this.http.post(this.usuariosUrl, usuario, { headers: this.headersAccept }).toPromise().then(response => console.log(response.json()));
+      
+      return this.http.post(this.usuariosUrl, JSON.stringify(usuarioID), { headers: this.headersAccept }).toPromise().then(response => response.json() as number);
       
   }
   //getUsuario(id: number): Promise<Usuario> {

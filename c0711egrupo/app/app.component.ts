@@ -26,9 +26,9 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['app/app.component.css']
 })
 export class AppComponent {
-    title = 'Nhapa Mail';
+    title = 'This.youMaiL';
     usuarios: Usuario[];
-    selectedUsuario: Usuario;
+    selectedUsuario: number;
     listo: boolean;
 
     constructor(
@@ -39,15 +39,15 @@ export class AppComponent {
         this.listo = false;
         this.usuarioService.getUsuarios()
             .then(usuarios => this.usuarios = usuarios)
-            .then(users => this.listo = true)
-            .then(users => this.selectedUsuario = users[0]);
+            .then(users => this.listo = true);
         
     }
-    onChange(usuarioSeleccionado: Usuario)
+    onChange(usuarioSeleccionado: number)
     {
         this.selectedUsuario = usuarioSeleccionado;
-        console.log(this.selectedUsuario);
-        this.usuarioService.update(this.selectedUsuario);
+        this.usuarioService.update(this.selectedUsuario)
+            .then(usuarioID => this.selectedUsuario = usuarioID)
+            .then(usuarioID => console.log(usuarioID));
     }
 
 }

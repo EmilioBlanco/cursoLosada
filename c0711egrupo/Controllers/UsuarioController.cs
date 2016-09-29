@@ -28,11 +28,14 @@ namespace c11eindividual.Controllers
             return UsuarioService.Lista();
 
         }
-        public UsuarioVo PostUsuario(UsuarioVo s){
+        //POST: api/usuario
+        [System.Web.Http.AcceptVerbs("POST")]
+        [System.Web.Http.HttpPost]
+        public int Post(int id){
 
-            System.Web.HttpContext.Current.Session["UsuariLoggeado"]=s;
+            System.Web.HttpContext.Current.Session["UsuariLoggeado"]=id;
 
-            return (UsuarioVo)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
+            return (int)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
 
         }
         

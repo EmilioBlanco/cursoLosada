@@ -29,7 +29,9 @@ export class MensajeDetailComponent implements OnInit {
         if (id) {
             this.create = false;
             this.mensajeService.getMensaje(id)
-                .then(mensaje => this.mensaje = mensaje);
+                .then(mensaje =>
+                    this.mensaje =
+                    mensaje);
             
         } else {
             this.mensaje = new Mensaje();

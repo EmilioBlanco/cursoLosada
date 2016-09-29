@@ -17,17 +17,15 @@ namespace c11eindividual.Controllers
 {
     public class SalidaController : ApiController
     {
-        private CorreoDB db = new CorreoDB();
         
         // GET: api/Mensajes/1
         public List<MensajeVo> GetSalida()
         {
-            Usuario s = (Usuario)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
-            CorreoDB db = new CorreoDB();
+            int usuarioID = (int)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
             MensajeRepository MensajeRepository = new MensajeRepository();
             MensajeUtil MensajeUtil = new MensajeUtil();
             MensajeService MensajeService = new MensajeService(MensajeRepository, MensajeUtil);
-            return MensajeService.Todos(s.id);
+            return MensajeService.Todos(usuarioID);
 
         }
     }

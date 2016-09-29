@@ -178,6 +178,7 @@
     <TypeScriptCompile Include="app\mensaje-detail.component.ts" />
     <TypeScriptCompile Include="app\mensaje.service.ts" />
     <TypeScriptCompile Include="app\mensaje.ts" />
+    <TypeScriptCompile Include="app\salida.component.ts" />
     <TypeScriptCompile Include="app\mensajes.component.ts" />
     <TypeScriptCompile Include="app\usuario.service.ts" />
     <TypeScriptCompile Include="app\usuario.ts" />

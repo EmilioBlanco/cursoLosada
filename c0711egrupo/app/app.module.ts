@@ -14,6 +14,7 @@ import { MensajesComponent }      from './mensajes.component';
 import { MensajeDetailComponent }  from './mensaje-detail.component';
 import { MensajeService }          from './mensaje.service';
 import { routing }              from './app.routing';
+import { SalidaComponent } from './salida.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { routing }              from './app.routing';
     AppComponent,
       MensajeDetailComponent,
       MensajesComponent,
+      SalidaComponent
   ],
   providers: [
       UsuarioService,

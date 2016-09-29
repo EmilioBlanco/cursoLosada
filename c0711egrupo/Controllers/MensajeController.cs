@@ -21,12 +21,12 @@ namespace c11eindividual.Controllers
         public List<MensajeVo> GetTodos()
         {
             using (CorreoDB db = new CorreoDB()) {
-                System.Web.HttpContext.Current.Session["UsuariLoggeado"] = db.Usuarios.Find(1);
-                Usuario s = (Usuario)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
+                System.Web.HttpContext.Current.Session["UsuariLoggeado"] = 1;
+                int usuariID = (int)System.Web.HttpContext.Current.Session["UsuariLoggeado"];
                 MensajeRepository MensajeRepository = new MensajeRepository();
                 MensajeUtil MensajeUtil = new MensajeUtil();
                 MensajeService MensajeService = new MensajeService(MensajeRepository, MensajeUtil);
-                return MensajeService.Todos(s.id);
+                return MensajeService.Todos(usuariID);
             }
                 
 
@@ -38,7 +38,8 @@ namespace c11eindividual.Controllers
             MensajeRepository MensajeRepository = new MensajeRepository();
             MensajeUtil MensajeUtil = new MensajeUtil();
             MensajeService MensajeService = new MensajeService(MensajeRepository, MensajeUtil);
-            return MensajeService.Lee(id);
+            var test =  MensajeService.Lee(id);
+            return test;
         }
 
         // PUT: api/Mensajes/5

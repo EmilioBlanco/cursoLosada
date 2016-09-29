@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MensajesComponent }     from './mensajes.component';
 import { MensajeDetailComponent } from './mensaje-detail.component';
+import { SalidaComponent } from './salida.component';
 
 const appRoutes: Routes = [
   {
@@ -28,7 +29,7 @@ const appRoutes: Routes = [
   },
   {
       path: 'salida',
-      component: MensajesComponent
+      component: SalidaComponent
   },
   {
       path: 'entrada',
