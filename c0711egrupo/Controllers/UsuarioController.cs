@@ -29,8 +29,8 @@ namespace c11eindividual.Controllers
 
         }
         //POST: api/usuario
-        [System.Web.Http.AcceptVerbs("POST")]
-        [System.Web.Http.HttpPost]
+        [AcceptVerbs("POST")]
+        [HttpPost]
         public int Post(int id){
 
             System.Web.HttpContext.Current.Session["UsuariLoggeado"]=id;
