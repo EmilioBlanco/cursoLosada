@@ -39,7 +39,9 @@ export class AppComponent {
         this.listo = false;
         this.usuarioService.getUsuarios()
             .then(usuarios => this.usuarios = usuarios)
-            .then(users => this.listo = true);
+            .then(users => this.listo = true)
+            .then(users => this.selectedUsuario = users[0]);
+        
     }
     onChange(usuarioSeleccionado: Usuario)
     {

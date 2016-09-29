@@ -26,8 +26,10 @@ export class MensajeService {
   }
 
   getMensaje(id: number): Promise<Mensaje> {
-    return this.getMensajes()
-               .then(mensajes => mensajes.find(mensaje => mensaje.id === id));
+      debugger
+      return this.http.get(this.mensajeUrl + '/' + id)
+          .toPromise()
+          .then(response => response.json() as Mensaje);
   }
   getEntrada(): Promise<Mensaje[]> {
       return this.http.get(this.entradaUrl)

@@ -27,7 +27,8 @@ namespace c11eindividual.Repositories
                         .Where(a2 => a2.id == ap.id)
                         .Where(a2 => a2.EmisorID == _id || a2.ReceptorID == _id)
                         .FirstOrDefault();
-                    aRetornar.Add(ap2);
+                    if(ap2 != null)
+                        aRetornar.Add(ap2);
 
                 }
                 return aRetornar;
