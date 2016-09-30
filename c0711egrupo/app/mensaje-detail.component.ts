@@ -34,6 +34,7 @@ export class MensajeDetailComponent implements OnInit {
                     mensaje);
             
         } else {
+            debugger
             this.mensaje = new Mensaje();
             this.create = true;
         }        

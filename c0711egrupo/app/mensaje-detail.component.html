@@ -1,7 +1,7 @@
 <div *ngIf="create">
     <div>
         <label>EmisorID: </label>
-        <label [(ngModel)]="mensaje.eUsuario.nombre">{{mensaje.eUsuario.nombre}}</label>
+        <label [(ngModel)]="mensaje.eUsuario.nombre"></label>
     </div>
     <div>
         <label>ReceptorID: </label>
@@ -23,6 +23,7 @@
         <textarea id="txtCuerpo" [(ngModel)]="mensaje.cuerpo" placeholder="Texto"></textarea>
     </div>
   <button class="btn btn-toolbar" style="color:black !important;" (click)="goBack()">Atras</button>
+    <button class="btn btn-danger" style="color:white !important;" disabled>Enviar</button>
 </div>
 <div *ngIf="mensaje && !create" >
     <h2>Mensaje </h2>
